@@ -1,0 +1,28 @@
+.myNavBar {
+    .login {
+        @include button($fs-0, $fw-bold-0, $color-white-0, $color-gray-4, $pd-1, $pd-1, $color-black-0, $color-black-0, $color-white-0, $color-black-0);
+        width: 70px;
+    }
+    .sign {
+        @include button($fs-0, $fw-bold-0, $color-red-0, $color-white-0, $pd-1, $pd-1, transparent, $color-white-0, $color-purple, transparent);
+        width: 90px;
+    }
+}
+
+.myget {
+    .get {
+        @include button($fs-0, $fw-bold-0, $color-red-0, $color-white-0, $pd-1, $pd-1, transparent, $color-white-0, $color-red-1, transparent);
+        width: 110px;
+    }
+}
+
+.mybrand {
+    .teaching {
+        @include button($fs-0, $fw-bold-0, $color-red-0, $color-white-0, $pd-1, $pd-1, transparent, $color-white-0, $color-red-1, transparent);
+        width: 150px;
+    }
+    .business-1 {
+        @include button($fs-0, $fw-bold-0, $color-red-0, $color-white-0, $pd-1, $pd-1, transparent, $color-white-0, $color-red-1, transparent);
+        width: 200px;
+    }
+}

@@ -1,0 +1,90 @@
+.myget {
+    margin: 30px auto;
+    width: 100%;
+    height: 350px;
+    background-color: $color-black-0;
+    text-align: center;
+    border-top: 10px solid $color-purple;
+    position: relative;
+    .content {
+        h1 {
+            @include text($fs-3, $fw-normal, $color-white-0);
+            margin-top: 120px;
+        }
+        p {
+            @include text($fs-0, $fw-normal, $color-white-0);
+        }
+    }
+    .icon {
+        color: $color-white-0;
+        font-size: 40px;
+        .fa-thermometer-empty {
+            position: absolute;
+            top: 50px;
+            left: 10%;
+        }
+        .fa-snowflake-o {
+            position: absolute;
+            top: 50px;
+            left: 30%;
+        }
+        .fa-assistive-listening-systems {
+            position: absolute;
+            top: 50px;
+            left: 49%;
+        }
+        .fa-cogs {
+            position: absolute;
+            top: 50px;
+            right: 30%;
+        }
+        .fa-hand-rock-o {
+            position: absolute;
+            top: 50px;
+            right: 10%;
+        }
+        .fa-hand-lizard-o {
+            position: absolute;
+            bottom: 30px;
+            left: 30%;
+        }
+        .fa-hand-paper-o {
+            position: absolute;
+            bottom: 30px;
+            left: 49%;
+        }
+        .fa-hand-peace-o {
+            position: absolute;
+            bottom: 30px;
+            left: 10%;
+        }
+        .fa-wheelchair {
+            position: absolute;
+            bottom: 30px;
+            right: 30%;
+        }
+        .fa-shopping-basket {
+            position: absolute;
+            bottom: 30px;
+            right: 10%;
+        }
+        .fa-paw {
+            position: absolute;
+            bottom: 150px;
+            left: 20%;
+        }
+        .fa-line-chart {
+            position: absolute;
+            bottom: 150px;
+            right: 20%;
+        }
+    }
+}
+
+@include repond-to('large') {
+    .myget {
+        .icon {
+            display: none;
+        }
+    }
+}

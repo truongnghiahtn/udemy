@@ -1,0 +1,58 @@
+.mybrand {
+    width: 100%;
+    background-color: $color-gray-1;
+    .content {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        h1 {
+            @include text($fs-0+1, $fw-normal, $color-gray-4);
+            padding-top: 40px;
+        }
+        .brand-content {
+            margin: 0 auto;
+            img {
+                margin: 10px 30px;
+            }
+        }
+        .content-bot {
+            margin-top: 50px;
+            position: relative;
+            height: 220px;
+            .item {
+                h2 {
+                    a {
+                        @include text($fs-0+4, $fw-normal, $color-black-0);
+                    }
+                }
+                p {
+                    @include text($fs-0+1, $fw-normal, black);
+                }
+                padding: 10px 50px;
+            }
+            .detail-teach {
+                &::after {
+                    content: '';
+                    width: 1px;
+                    height: 120px;
+                    background-color: $color-gray-2;
+                    position: absolute;
+                    top: 10px;
+                    left: 100%;
+                }
+            }
+        }
+    }
+}
+
+@include repond-to('medium') {
+    .mybrand {
+        .content {
+            .content-bot {
+                .item {
+                    padding: 10px 20px;
+                }
+            }
+        }
+    }
+}

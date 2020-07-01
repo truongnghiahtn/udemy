@@ -1,0 +1,62 @@
+.myview-courses {
+    width: 90%;
+    margin: 10px auto;
+    h1 {
+        @include text($fs-0+4, $fw-normal, $color-black-light)
+    }
+    .myview-content {
+        position: relative;
+        padding-top: 15px;
+        .card {
+            height: 328px;
+            .card-body {
+                h4 {
+                    @include text($fs-0, $fw-bold-0, $color-black-0);
+                    margin: 0;
+                }
+                .rating {
+                    .rating-star {
+                        i {
+                            color: $color-yellow;
+                        }
+                        i:last-child {
+                            margin-right: 20px;
+                        }
+                    }
+                    .span {
+                        @include text($fs-1, $fw-bold-1, $color-black-light)
+                    }
+                    span:last-child {
+                        margin-left: 10px;
+                    }
+                }
+                .price {
+                    text-align: right;
+                    margin-top: 10px;
+                    .old-price {
+                        @include text($fs-1, $fw-normal, $color-gray-4);
+                        text-decoration: line-through;
+                    }
+                    .new-price {
+                        @include text($fs-0+3, $fw-bold-0, $color-black-0);
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+        .owl-prev {
+            top: 120px;
+        }
+        .owl-next {
+            top: 120px;
+        }
+    }
+}
+
+@include repond-to('large') {
+    .myview {
+        .myview-courses {
+            width: 700px;
+        }
+    }
+}

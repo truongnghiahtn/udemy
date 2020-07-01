@@ -1,0 +1,68 @@
+@mixin text($fs, $fw, $color) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+}
+
+@mixin button($fs, $fw, $bg-color, $color, $pd-t, $pd-l, $bd-color, $hover-color, $hover-bg-color, $hover-bd-color) {
+    font-size: $fs;
+    font-weight: $fw;
+    background-color: $bg-color;
+    color: $color;
+    padding: $pd-t $pd-l;
+    border: 1px solid $bd-color;
+    cursor: pointer;
+    &:hover {
+        color: $hover-color;
+        background-color: $hover-bg-color;
+        border: 1px solid $hover-bd-color;
+    }
+}
+
+@mixin repond-to($breakpoint) {
+    @if map-has-key($map: $breakpoints, $key: $breakpoint) {
+        $value: map-get($map: $breakpoints, $key: $breakpoint);
+        @media screen and(max-width: $value) {
+            @content;
+        }
+    }
+    @else {
+        @warn"bien nay khong ton tai";
+    }
+}
+
+@mixin input($bg-color, $height, ) {
+    border: none;
+    background-color: $bg-color;
+    height: $height;
+    transition: none;
+    &:focus {
+        box-shadow: none;
+        background-color: $color-white-0;
+        border-top: 1px solid $color-black-0;
+        border-bottom: 1px solid $color-black-0;
+        border-left: 1px solid $color-black-0;
+    }
+    &:focus+.input-group-prepend {
+        margin-left: -1px;
+        .input-group-text {
+            background-color: $color-white-0;
+            border-top: 1px solid $color-black-0;
+            border-bottom: 1px solid $color-black-0;
+            border-right: 1px solid $color-black-0;
+            &:hover {
+                background-color: $color-red-0;
+            }
+        }
+    }
+}
+
+@mixin icon_search($bg-color, $color, $hover-color, $hover-bg-color) {
+    border-color: transparent;
+    background-color: $bg-color;
+    color: $color;
+    &:hover {
+        color: $hover-color;
+        background-color: $hover-bg-color
+    }
+}

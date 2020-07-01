@@ -1,0 +1,113 @@
+.mywork {
+    margin-top: 50px;
+    .mywork__content {
+        width: 90%;
+        margin: 0 auto;
+        height: 450px;
+        .content-left {
+            h1 {
+                @include text(19px, $fw-bold-0, $color-black-0)
+            }
+            p {
+                @include text(16px, $fw-normal, $color-black-0)
+            }
+            background-color: $color-gray-3;
+            height: 388px;
+            padding: 150px 20px;
+        }
+        .mynav-tab {
+            .nav {
+                border-bottom: 1px solid $color-gray-1;
+                justify-content: space-between;
+                .nav-item {
+                    width: 14%;
+                    &:hover {
+                        .nav-link {
+                            border: none;
+                        }
+                        border: none;
+                    }
+                    .nav-link.active {
+                        border: none;
+                        border-bottom: 5px solid $color-blue;
+                    }
+                    .nav-link {
+                        border: none;
+                        @include text($fs-0, $fw-normal, $color-black-0);
+                        padding: 8px 12px 15px 12px;
+                        text-align: center;
+                    }
+                }
+                .nav-item:nth-child(4),
+                .nav-item:nth-child(5) {
+                    .nav-link {
+                        margin-top: -20px;
+                        text-align: left;
+                    }
+                }
+            }
+            .tab-content {
+                position: relative;
+                padding-top: 15px;
+                .card {
+                    height: 328px;
+                    .card-body {
+                        h4 {
+                            @include text($fs-0, $fw-bold-0, $color-black-0);
+                            margin: 0;
+                        }
+                        .rating {
+                            .rating-star {
+                                i {
+                                    color: $color-yellow;
+                                }
+                                i:last-child {
+                                    margin-right: 20px;
+                                }
+                            }
+                            .span {
+                                @include text($fs-1, $fw-bold-1, $color-black-light)
+                            }
+                            span:last-child {
+                                margin-left: 10px;
+                            }
+                        }
+                        .price {
+                            text-align: right;
+                            margin-top: 10px;
+                            .old-price {
+                                @include text($fs-1, $fw-normal, $color-gray-4);
+                                text-decoration: line-through;
+                            }
+                            .new-price {
+                                @include text($fs-0+3, $fw-bold-0, $color-black-0);
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include repond-to('large') {
+    .mywork {
+        .content-left {
+            display: none;
+        }
+        .mynav-tab {
+            width: 700px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@include repond-to('medium') {
+    .mywork {
+        .mynav-tab {
+            width: 700px;
+            margin: 0 auto;
+        }
+    }
+}

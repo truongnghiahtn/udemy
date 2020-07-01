@@ -1,0 +1,94 @@
+.mycarousel {
+    position: relative;
+    img {
+        height: 550px;
+    }
+    .carousel-content {
+        position: absolute;
+        top: 100px;
+        left: 50px;
+        width: 500px;
+        h1 {
+            @include text($fs-4+4, $fw-bold-0, $color-white-0)
+        }
+        p {
+            @include text($fs-0+3, $fw-normal, $color-white-0)
+        }
+        .input-search {
+            .form-control {
+                @include input($color-white-0, 50px);
+                &:focus {
+                    border: none;
+                }
+                &:focus+.input-group-prepend {
+                    .input-group-text {
+                        border: none;
+                    }
+                }
+            }
+        }
+        .input-group-prepend {
+            margin-left: 0;
+            .input-group-text {
+                @include icon_search($color-white-0, $color-red-0, $color-white-0, $color-red-0);
+                width: 55px;
+                padding: 0 20px;
+                border-radius: 0 3px 3px 0;
+            }
+        }
+    }
+    .carousel-bot {
+        background: linear-gradient(to right, $color-purple, $color-red-0);
+        width: 100%;
+        .carousel-icon {
+            align-items: center;
+            height: 70px;
+            padding: 0 50px;
+            i {
+                @include text(50px, 300, $color-white-0);
+                padding-right: 10px
+            }
+            p {
+                font-size: $fs-0;
+                color: $color-white-0;
+                padding-top: 10px
+            }
+        }
+    }
+}
+
+@include repond-to('extra-large') {
+    .carousel-icon {
+        i {
+            display: none;
+        }
+    }
+}
+
+@include repond-to('large') {
+    .carousel-bot {
+        .carousel-icon {
+            height: 120px;
+        }
+    }
+}
+
+@include repond-to('medium') {
+    .carousel-bot {
+        display: none;
+    }
+}
+
+@include repond-to('small') {
+    .mycarousel {
+        img {
+            height: 400px;
+        }
+        .carousel-content {
+            width: 90%;
+            h1 {
+                @include text($fs-3, 300, $color-white-0);
+            }
+        }
+    }
+}

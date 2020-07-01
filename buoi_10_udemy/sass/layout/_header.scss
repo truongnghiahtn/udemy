@@ -1,0 +1,105 @@
+.myNavBar {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+    border-bottom: solid 1px $color-black-0;
+    &.headerClass {
+        border-bottom: 5px solid $color-blue;
+    }
+    .navbar-brand {
+        img {
+            width: 110px;
+        }
+        flex-grow: 1;
+    }
+    .categories {
+        span {
+            @include text($fs-0, $fw-normal, $color-black-light)
+        }
+        align-self: center;
+        flex-grow: 1;
+    }
+    .input-search {
+        flex-grow: 5;
+        .form-control {
+            @include input($color-gray-1, 42px, )
+        }
+    }
+    .input-group-prepend {
+        .input-group-text {
+            @include icon_search($color-gray-1, $color-red-0, $color-white-0, $color-red-0);
+        }
+    }
+}
+
+.navbar-nav {
+    width: 100%;
+    justify-content: space-between;
+    .nav-item {
+        .nav-link {
+            @include text($fs-1, $fw-normal, $color-black-light);
+            padding: $pd-1+2 $pd-1+5;
+            &:hover {
+                background-color: $color-gray-1;
+            }
+        }
+        .content-link {
+            p {
+                opacity: 1;
+                position: absolute;
+                width: 160px;
+                border: 1px solid $color-gray-3;
+                background-color: $color-white-0;
+                padding: 5px 10px;
+                bottom: -120px;
+                transition: all 0.5s;
+                opacity: 0;
+                z-index: 100;
+                &::after {
+                    content: '';
+                    border-bottom: 9px solid $color-gray-2;
+                    border-left: 9px solid transparent;
+                    border-right: 9px solid transparent;
+                    position: absolute;
+                    top: -9px;
+                    left: 10%;
+                    transition: all 0.5s;
+                    opacity: 0;
+                }
+            }
+        }
+        .nav-link {
+            &:hover+.content-link {
+                p {
+                    opacity: 1;
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .nav-item:nth-child(3) {
+        .nav-link {
+            border-radius: 50%;
+            font-size: 16px;
+        }
+    }
+}
+
+@include repond-to('extra-large') {
+    .business,
+    .teach {
+        display: none;
+    }
+}
+
+@include repond-to('medium') {
+    .myNavBar {
+        .categories,
+        .input-search {
+            display: none;
+        }
+    }
+}
